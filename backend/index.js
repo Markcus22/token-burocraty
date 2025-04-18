@@ -1,16 +1,18 @@
-const express = require('express');
-const app = express();
-const port = 3001;
+import express from 'express';
+import cors from 'cors';
 
-const documentRoutes = require('./routes/documents');
+const app = express();
+
+// Habilita CORS para el frontend (puerto 5174 de Vite)
+app.use(cors({
+  origin: 'http://127.0.0.1:5174',
+  credentials: true
+}));
 
 app.use(express.json());
-app.use('/api/documents', documentRoutes);
 
-app.get('/', (req, res) => {
-  res.send('API para documentos navieros.');
-});
+// ... tus rutas aquí
 
-app.listen(port, () => {
-  console.log(`Servidor backend escuchando en http://localhost:${port}`);
+app.listen(3001, () => {
+  console.log('Servidor escuchando en http://localhost:3001');
 });

@@ -1,0 +1,72 @@
+/* src/App.css */
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom right, #0f172a, #1e293b);
+  color: white;
+}
+
+.logo {
+  height: 6rem;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #0ea5e9);
+  transform: scale(1.05);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafb);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: rgba(30, 41, 59, 0.7);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  margin: 1.5rem auto;
+  max-width: 600px;
+}
+
+.card button {
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #0284c7;
+}
+
+.read-the-docs {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  margin-top: 2rem;
+}
+
+footer {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
