@@ -3,7 +3,7 @@ import Inicio from './pages/Inicio';
 import Servicios from './pages/Servicios';
 import Proyectos from './pages/Proyectos';
 import Contacto from './pages/Contacto';
-import StockViewer from './pages/StockViewer';
+import Acciones from './pages/Acciones'; // ✅ corregido: antes era StockViewer
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
             <Route path="/" element={<Inicio />} />
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/proyectos" element={<Proyectos />} />
-            <Route path="/acciones" element={<StockViewer />} />
+            <Route path="/acciones" element={<Acciones />} /> {/* ✅ Aquí está el cambio */}
             <Route path="/contacto" element={<Contacto />} />
           </Routes>
         </main>
