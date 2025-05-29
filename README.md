@@ -126,7 +126,4 @@ Este proyecto está bajo la licencia MIT.
 
 > Proyecto desarrollado como iniciativa personal para explorar la aplicación de blockchain y criptografía avanzada (ZKP) en entornos reales del sector marítimo y logístico.
 
----
-
-¿Quieres que te ayude ahora a generar una imagen de portada para el repositorio (por ejemplo, con el flujo de emisión y validación de documentos)?
 
