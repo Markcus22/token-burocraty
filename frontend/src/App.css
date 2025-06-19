@@ -1,4 +1,8 @@
 /* src/App.css */
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
 #root {
   max-width: 100%;
   margin: 0 auto;

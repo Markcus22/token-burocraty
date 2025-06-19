@@ -1,11 +1,11 @@
-const express = require("express");
-const router = express.Router();
-const multer = require("multer");
-const path = require("path");
+import express from "express";
+import multer from "multer";
+import path from "path";
+import contract from "../services/contractService.js";
+import { uploadFileToPinata } from "../services/pinataService.js";
 
+const router = express.Router();
 const upload = multer({ dest: "uploads/" });
-const contract = require("../services/contractService");
-const { uploadFileToPinata } = require("../services/pinataService");
 
 // POST /api/documents/upload-and-mint
 router.post("/upload-and-mint", upload.single("document"), async (req, res) => {
@@ -35,6 +35,7 @@ router.post("/upload-and-mint", upload.single("document"), async (req, res) => {
     res.status(500).json({ error: "Error al subir y emitir NFT" });
   }
 });
+
 // GET /api/documents/:tokenId
 router.get("/:tokenId", async (req, res) => {
   try {
@@ -53,6 +54,7 @@ router.get("/:tokenId", async (req, res) => {
     res.status(404).json({ error: "NFT no encontrado o token inválido" });
   }
 });
+
 // Obtener todos los NFTs emitidos
 router.get("/", async (req, res) => {
   try {
@@ -78,6 +80,7 @@ router.get("/", async (req, res) => {
     res.status(500).json({ error: "No se pudo listar los NFTs" });
   }
 });
+
 // DELETE /api/documents/:tokenId - Revocar un NFT
 router.delete("/:tokenId", async (req, res) => {
   try {
@@ -95,4 +98,5 @@ router.delete("/:tokenId", async (req, res) => {
     res.status(500).json({ error: "Error al revocar documento" });
   }
 });
-module.exports = router;
+
+export default router;

@@ -9,7 +9,7 @@ contract MaritimeDocumentNFT is ERC721URIStorage, Ownable {
 
     event DocumentMinted(uint256 indexed tokenId, address indexed recipient, string tokenURI);
 
-    constructor(address initialOwner) ERC721("MaritimeDocument", "MDOC") Ownable(initialOwner) {}
+    constructor() ERC721("MaritimeDocument", "MDOC") {}
 
     function mintDocument(address to, string memory tokenURI) public onlyOwner returns (uint256) {
         docCount += 1;
@@ -18,7 +18,8 @@ contract MaritimeDocumentNFT is ERC721URIStorage, Ownable {
         emit DocumentMinted(docCount, to, tokenURI);
         return docCount;
     }
-}
-function burnDocument(uint256 tokenId) public onlyOwner {
-    _burn(tokenId);
+
+    function burnDocument(uint256 tokenId) public onlyOwner {
+        _burn(tokenId);
+    }
 }
